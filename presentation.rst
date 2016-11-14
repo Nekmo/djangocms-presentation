@@ -36,14 +36,27 @@ Django
 
 ----
 
-* Base de datos
+Framework
+=========
+Estructura conceptual y tecnológica de soporte definido, normalmente módulos concretos y herramientas para el desarrollo.
+    
+----
+
+Algunas de las herramientas que ofrece Django...
+================================================
+
+* CRM (models.py)
 * Templates
-* Views
-* Settings
+* Sis. vistas genéricas (views.py)
+* Middleware
+* Sis. de urls (urls.py)
 * Admin
 * Sistema de usuarios...
 
 ----
+
+Herramientas que ofrece DjangoCMS
+=================================
 
 * Sistema de menús jerárquico y multiidioma.
 * Gestión y creación de páginas.
