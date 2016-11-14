@@ -1,6 +1,9 @@
-.image-centered {
-    margin: 0 auto;
-    display: inherit;
+
+
+.reveal section img {
+    border: 0;
+    box-shadow: none;
+    background: none;
 }
 
 .quote {
@@ -8,4 +11,10 @@
     font-size: 300%;
     color: gray;
     font-style: italic;
+}
+
+#cms {
+    h1 {
+        font-size: 1200%;
+    }
 }

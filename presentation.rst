@@ -2,6 +2,7 @@
 .. title: DjangoCMS
 
 :data-transition-duration: 500
+:css: css/presentation.css
 
 ----
 
@@ -19,11 +20,14 @@
 
 ----
 
+:id: cms
+
 CMS
 ===
+
 Content Management System
 -------------------------
-Foo
+Adm. de contenidos, para los administradores, editores, participantes y demás usuarios del sitio.
 
 ----
 
@@ -45,13 +49,24 @@ Estructura conceptual y tecnológica de soporte definido, normalmente módulos c
 Algunas de las herramientas que ofrece Django...
 ================================================
 
+* Admin
 * CRM (models.py)
 * Templates
 * Sis. vistas genéricas (views.py)
 * Middleware
 * Sis. de urls (urls.py)
-* Admin
 * Sistema de usuarios...
+
+----
+
+DjangoCMS:
+==========
+
+Complementa a Django como framework
+-----------------------------------
+
+Pero con herramientas para CMS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ----
 
@@ -72,18 +87,26 @@ Una pequeña demostración...
 
 ----
 
-DjangoCMS es respetuoso con el propio Django
-============================================
+DjangoCMS es
+============
+respetuoso con Django.
+----------------------
 
 No se solapa con el mismo
--------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
-- No lo modifica.
-- Lo complementa
+No lo modifica
+""""""""""""""
+
+Lo complementa
+""""""""""""""
 
 ----
 
-* Mismo admin de Django para las modales de personalización en el frontend.
+DjangoCMS
+=========
+
+* Usa el admin de Django.
 * Mismo sistema de modelos.
 * Mismo sistema de urls.
 * Mismos views.
