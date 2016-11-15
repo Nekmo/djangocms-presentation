@@ -1,5 +1,26 @@
 
 
+.reveal {
+    .warning {
+        background: #ffe7a7;
+        color: #1e1e1e;
+        padding: 10px;
+    }
+}
+
+
+.reveal tt {
+    color: #f92672;
+    background: #1b1b1b;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.reveal pre.highlight {
+    padding: 10px;
+    background: #1b1b1b;
+}
+
 .reveal section img {
     border: 0;
     box-shadow: none;

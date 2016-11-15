@@ -3,13 +3,13 @@
 
 :data-transition-duration: 500
 :css: css/presentation.css
+:css: css/monokai.css
 
 ----
 
 :id: intro
 
 .. image:: images/djangocms_logo.png
-    :class: image-centered
 
 .. class:: quote
 
@@ -42,7 +42,7 @@ Django
     "The web framework for perfectionists with deadlines"
     
 .. note::
-    Es un framework para el desarrollo web en Python con herramientas para todo.
+    Es un framework para el desarrollo web en Python.
 
 ----
 
@@ -51,12 +51,12 @@ Framework
 Estructura conceptual y tecnológica de soporte definido, normalmente módulos concretos y herramientas para el desarrollo.
     
 .. note::
-    ¿Qué es un framework? Es una estructura con unos métodos establecidos para el desarrollo con unas herramientas.
+    ¿Y qué es un framework? Un método de trabajo establecido haciendo uso de unas herramientas predefinidas.
     
 ----
 
 Algunas de las herramientas que ofrece Django...
-================================================
+------------------------------------------------
 
 * Admin
 * CRM (models.py)
@@ -67,7 +67,7 @@ Algunas de las herramientas que ofrece Django...
 * Sistema de usuarios...
 
 .. note::
-    Para quienes no han usado Django, algunas de sus características...
+    ¿Y qué herramientas son esas? En el caso de Django, algunas de estas son...
 
 ----
 
@@ -81,7 +81,7 @@ Pero con herramientas para CMS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. note::
-    Complementa el framework de Django con herramientas para CMS.
+    Ahora, perdonad el rodeo. DjangoCMS lo que hace es complementar el framework de Django con herramientas para CMS.
 
 ----
 
@@ -96,7 +96,7 @@ Herramientas que ofrece DjangoCMS
 * Gestión de los Apphooks y los plugins (que hablaremos más adelante).
 
 .. note::
-    Y ahora las las herramientas que nos incluye DjangoCMS...
+    Qué herramientas nos ofrece DjangoCMS:
 
 ----
 
@@ -108,14 +108,82 @@ Una pequeña demostración...
 
 ----
 
-Desarrollo para DjangoCMS
-=========================
+Cómo usar DjangoCMS
+===================
+
+Podemos usar DjangoCMS en un proyecto Django ya existente con muy pocos cambios.
+
+* Añadir los componentes al :code:`INSTALLED_APPS`.
+* Añadir los middleware y context processor.
+* Añadir al :code:`urls.py`.
+* Etiquetas DjangoCMS en template base.
+* Definir templates.
+
+|
+
+Más información: http://docs.django-cms.org/en/release-3.4.x/how_to/install.html
+
+----
+
+Cambios en templates
+====================
+
+En el template base, debemos poner las etiquetas:
+
+* ``placeholder/placeholder_static``
+* ``show_menu``
+
+----
+
+Placeholder
+===========
+Permite definir dónde irán los plugins (bloques, widgets).
+
+.. code:: htmldjango
+
+     {% block content %}
+     <div class="jumbotron">
+         {% placeholder "feature" %}
+     </div>
+     <div>
+         {% placeholder "content" %}
+     </div>
+     <div>
+         {% placeholder "splashbox" %}
+     </div>
+    {% endblock content %}
+    
+El identificador (primer argumento) permite reutilizar secciones entre diferentes templates.
+    
+----
+
+
+.. image:: images/new-placeholder.png
+
+----
+
+Show_menu
+=========
+
+Renderiza los menús de DjangoCMS.
+
+.. code:: htmldjango
+
+    <ul class="nav navbar-nav">
+        {% show_menu 0 1 100 100 "menu.html" %}
+    </ul>
+
+----
+
+Desarrollo con DjangoCMS
+========================
 
 Tenemos principalmente:
 
 - Apphooks
 - Plugins
 
+|
 
 Además de otras herramientas como:
 
@@ -130,6 +198,20 @@ Además de otras herramientas como:
 
 Apphooks
 ========
+Convertiremos una app de Django en una AppHook de DjangoCMS, para poder añadirla dinámicamente con la interfaz web.
+
+|
+
+.. class:: warning
+
+    *Ojo:* Pueden aprovecharse las herramientas de DjangoCMS sin necesidad de que la app sea una AppHook. Esto es sólo para poder añadirlo dinámicamente.
+
+----
+
+Adaptaremos Django Polls
+========================
+
+
 
 ----
 
