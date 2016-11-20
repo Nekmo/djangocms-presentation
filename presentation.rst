@@ -30,7 +30,7 @@ Content Management System
 Adm. de contenidos, para los administradores, editores, participantes y demás usuarios del sitio.
 
 .. note::
-    CMS: permite a los editores añadir, editar y gestionar contenido.
+    CMS: permite a los editores añadir, editar y gestionar contenido. Por ejemplo, noticias.
 
 ----
 
@@ -153,10 +153,45 @@ Permite definir dónde irán los plugins (bloques, widgets).
      </div>
     {% endblock content %}
     
+    {% block footer %}
+    <div id="footer">
+        {% static_placeholder "footer" %}
+    </div>
+    {% endblock %}
+    
 El identificador (primer argumento) permite reutilizar secciones entre diferentes templates.
     
 ----
 
+Placeholder y placeholder_static
+--------------------------------
+
+Además, podemos diferenciar entre:
+
+* **Placeholder static:** Va asociado a una página en concreto o contenido. Por ejemplo, un artículo de blog sobre un concierto, puede tener al lado un plugin de botón para reservas.
+* **Placeholder:** Se muestra en todas las páginas que tengan el identificador de placeholder, sin diferenciar contenido. Por ejemplo, un plugin que se mostrará en TODOS los artículos de blog, con publicidad.
+    
+----
+
+Ejemplos de placeholder static
+==============================
+
+* Un placeholder **footer**, que se hereda en todos los templates, que tendrá un plugin de texto con el aviso legal de la página.
+* Un placeholder **blog_header** que se usa sólo en los templates de una app blog.
+* Un placeholder **blog_article_comments**, que se mostrará sólo en el template de article de blog.
+   
+
+----
+
+Ejemplos de placeholder
+=======================
+
+* Un placeholder **content**, que es donde va el contenido de un artículo o noticia.
+* Un placeholder **feature**, que irá al lado del artículo. Por ejemplo, "¡Reserva ya las entradas para este evento!"
+   
+----
+
+Al editar una página, podremos visualizar los placeholders en los que podremos añadir plugins.
 
 .. image:: images/new-placeholder.png
 
@@ -198,6 +233,40 @@ Además de otras herramientas como:
 
 Apphooks
 ========
+
+Similares a las apps de Django, tienen un ``urls.py```, mismos views, mismos templates... pero con la posibilidad de añadirlos de forma dinámica asociados a una url de partida. Por ejemplo, /blog/.
+
+Ejemplos:
+
+* Una app **blog**. Podremos añadir tantos apps blogs a nuestra web como queramos.
+* Una app **personas**. Pueden añadirse varias apps, cada una filtrando qué tipo de personas se mostrarán  (por ejemplo, app personas "socios", y app personas "junta directiva").
+* Una app **encuestas** que permite añadir múltiples encuestas. A su vez habrá plugins que permitirán incluir una encuesta en una página.
+
+
+----
+
+Cómo se añaden en la interfaz
+=============================
+
+Creando una página nueva. Por defecto, DjangoCMS crea páginas de **CONTENIDO**, pero es posible cambiarlo para que sea una app.
+
+1. Se crea una página **blog**, con url ``/blog/``.
+2. Tras crearse la página, se va a *avanzado* y se elige la app, en este caso la de blog.
+3. Ahora la página es una app, y las urls partirán de la url base de la página.
+
+Ejemplos:
+
+* **/blog/**: portada del blog.
+* **/blog/c/software-libre**: Categoría software libre.
+* **/blog/ahora-uso-django-cms/**: Entrada en el blog.
+
+
+Crear una AppHook
+=================
+
+Adaptando Django polls, app del tutorial de Django
+--------------------------------------------------
+
 Convertiremos una app de Django en una AppHook de DjangoCMS, para poder añadirla dinámicamente con la interfaz web.
 
 |
@@ -205,13 +274,6 @@ Convertiremos una app de Django en una AppHook de DjangoCMS, para poder añadirl
 .. class:: warning
 
     *Ojo:* Pueden aprovecharse las herramientas de DjangoCMS sin necesidad de que la app sea una AppHook. Esto es sólo para poder añadirlo dinámicamente.
-
-----
-
-Adaptaremos Django Polls
-========================
-
-
 
 ----
 
