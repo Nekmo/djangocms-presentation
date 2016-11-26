@@ -269,11 +269,67 @@ Adaptando Django polls, app del tutorial de Django
 
 Convertiremos una app de Django en una AppHook de DjangoCMS, para poder añadirla dinámicamente con la interfaz web.
 
+Primero veremos cómo es la App original antes de modificarla.
+
 |
 
 .. class:: warning
 
     *Ojo:* Pueden aprovecharse las herramientas de DjangoCMS sin necesidad de que la app sea una AppHook. Esto es sólo para poder añadirlo dinámicamente.
+
+----
+
+Nuestra App *polls* tiene:
+
+* Un archivo ``models.py`` con el esquema de la base de datos y los métodos .
+* Un archivo ``admin.py`` con  las clases para administrar los modelos.
+* Un archivo ``views.py`` con las funciones y clases que procesan las peticiones web, para devolver unas respuestas.
+* Un archivo ``urls.py`` que relaciona las urls con las vistas que ejecutarán.
+* Un directorio ``templates/`` con los archivos html para visualizar el resultado de las vistas.
+
+----
+
+Echemos un vistazo...
+=====================
+
+----
+
+Convirtiendo nuestra App en un AppHook
+======================================
+
+Primero, comentaremos del archivo ``proyecto/urls.py`` la importación de nuestro urls, porque ya no lo necesitaremos. Ahora lo gestionará DjangoCMS con su AppHook.
+
+.. code:: python
+
+    from django.conf.urls import url, include
+    from django.contrib import admin
+
+    urlpatterns = [
+        url(r'^admin/', admin.site.urls),
+        url(r'^polls/', include('polls.urls')),  # <-- la comentamos
+    ]
+
+----
+
+cms_apps.py
+===========
+En este archivo se definen los AppHooks que se podrán añadir desde la interfaz web. En nuestro caso:
+
+.. code:: python
+
+    # cms_apps.py
+    from cms.app_base import CMSApp
+    from cms.apphook_pool import apphook_pool
+    from django.utils.translation import ugettext_lazy as _
+
+
+    class PollsApphook(CMSApp):
+        name = _("Polls Apphook")
+
+        def get_urls(self, page=None, language=None, **kwargs):
+            return ["polls.urls"]  # Ahora el urls de la app se carga con esto
+
+    apphook_pool.register(PollsApphook)
 
 ----
 
