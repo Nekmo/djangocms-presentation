@@ -286,7 +286,12 @@ Creando una página nueva. Por defecto, DjangoCMS crea páginas de **CONTENIDO**
 2. Tras crearse la página, se va a *avanzado* y se elige la app, en este caso la de blog.
 3. Ahora la página es una app, y las urls partirán de la url base de la página.
 
+----
+
+:id: apphooks-ex
+
 Ejemplos:
+---------
 
 * **/blog/**: portada del blog.
 * **/blog/c/software-libre**: Categoría software libre.
