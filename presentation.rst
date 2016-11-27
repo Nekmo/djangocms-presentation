@@ -34,6 +34,8 @@ Adm. de contenidos, para los administradores, editores, participantes y demás u
 
 ----
 
+:id: django-def
+
 Django
 ======
 
@@ -46,6 +48,8 @@ Django
 
 ----
 
+:id: framework-def
+
 Framework
 =========
 Estructura conceptual y tecnológica de soporte definido, normalmente módulos concretos y herramientas para el desarrollo.
@@ -54,6 +58,8 @@ Estructura conceptual y tecnológica de soporte definido, normalmente módulos c
     ¿Y qué es un framework? Un método de trabajo establecido haciendo uso de unas herramientas predefinidas.
     
 ----
+
+:id: django-features
 
 Algunas de las herramientas que ofrece Django...
 ================================================
@@ -71,6 +77,8 @@ Algunas de las herramientas que ofrece Django...
 
 ----
 
+:id: djangocms-def
+
 DjangoCMS:
 ==========
 
@@ -84,6 +92,8 @@ Pero con herramientas para CMS
     Ahora, perdonad el rodeo. DjangoCMS lo que hace es complementar el framework de Django con herramientas para CMS.
 
 ----
+
+:id: djangocms-features
 
 Herramientas que ofrece DjangoCMS
 =================================
@@ -100,6 +110,8 @@ Herramientas que ofrece DjangoCMS
 
 ----
 
+:id: demo-1
+
 Una pequeña demostración...
 ===========================
 
@@ -107,6 +119,8 @@ Una pequeña demostración...
     Y ahora una pequeña demostración para que se vea de qué hablamos...
 
 ----
+
+:id: cms-howto
 
 Cómo usar DjangoCMS
 ===================
@@ -125,6 +139,8 @@ Más información: http://docs.django-cms.org/en/release-3.4.x/how_to/install.ht
 
 ----
 
+:id: cms-templates-changes
+
 Cambios en templates
 ====================
 
@@ -134,6 +150,8 @@ En el template base, debemos poner las etiquetas:
 * ``show_menu``
 
 ----
+
+:id: placeholder-def
 
 Placeholder
 ===========
@@ -163,6 +181,8 @@ El identificador (primer argumento) permite reutilizar secciones entre diferente
     
 ----
 
+:id: placeholders-types
+
 Placeholder y placeholder_static
 --------------------------------
 
@@ -173,6 +193,8 @@ Además, podemos diferenciar entre:
     
 ----
 
+:id: placeholder-static-ex
+
 Ejemplos de placeholder static
 ==============================
 
@@ -182,6 +204,8 @@ Ejemplos de placeholder static
    
 
 ----
+
+:id: placeholder-ex
 
 Ejemplos de placeholder
 =======================
@@ -197,6 +221,8 @@ Al editar una página, podremos visualizar los placeholders en los que podremos 
 
 ----
 
+:id: show-menu-def
+
 Show_menu
 =========
 
@@ -209,6 +235,8 @@ Renderiza los menús de DjangoCMS.
     </ul>
 
 ----
+
+:id: cms-dev
 
 Desarrollo con DjangoCMS
 ========================
@@ -231,6 +259,8 @@ Además de otras herramientas como:
 
 ----
 
+:id: apphooks-def
+
 Apphooks
 ========
 
@@ -244,6 +274,8 @@ Ejemplos:
 
 
 ----
+
+:id: apphooks-usage
 
 Cómo se añaden en la interfaz
 =============================
@@ -260,6 +292,9 @@ Ejemplos:
 * **/blog/c/software-libre**: Categoría software libre.
 * **/blog/ahora-uso-django-cms/**: Entrada en el blog.
 
+----
+
+:id: create-apphook
 
 Crear una AppHook
 =================
@@ -279,6 +314,8 @@ Primero veremos cómo es la App original antes de modificarla.
 
 ----
 
+:id: apphook-polls-intro
+
 Nuestra App *polls* tiene:
 
 * Un archivo ``models.py`` con el esquema de la base de datos y los métodos .
@@ -289,10 +326,14 @@ Nuestra App *polls* tiene:
 
 ----
 
+:id: demo-2
+
 Echemos un vistazo...
 =====================
 
 ----
+
+:id: apphook-polls-urls
 
 Convirtiendo nuestra App en un AppHook
 ======================================
@@ -310,6 +351,8 @@ Primero, comentaremos del archivo ``proyecto/urls.py`` la importación de nuestr
     ]
 
 ----
+
+:id: apphook-polls-cms-apps
 
 cms_apps.py
 ===========
@@ -333,11 +376,17 @@ En este archivo se definen los AppHooks que se podrán añadir desde la interfaz
 
 ----
 
+:id: demo-3
+
 Eso es todo
 ==========
 Tras esto nuestra App ya es un Apphook. Sin más cambios necesarios.
 
+Veamos ahora cómo queda...
+
 ----
+
+:id: djangocms-ending-1
 
 DjangoCMS es
 ============
@@ -358,6 +407,8 @@ Lo complementa
 
 ----
 
+:id: djangocms-ending-2
+
 DjangoCMS
 =========
 
@@ -372,6 +423,8 @@ DjangoCMS
 
 ----
 
+:id: plugins
+
 Plugins
 =======
 Son el equivalente a los widgets de otros CMS.
@@ -382,6 +435,8 @@ Bloques que se integran en las páginas y pueden reordenarse.
     Al igual que en otros CMS, en DjangoCMS hay bloques, a los que se denomina widgets, que se integran en las páginas, pudiéndose añadir, eliminar, modificar o reordenar cuando se desee.
     
 ----
+
+:id: references
     
 Referencias
 ===========
@@ -392,6 +447,8 @@ Referencias
 * **Extras:** https://marketplace.django-cms.org/en/addons/
 
 ----
+
+:id: end
 
 ¡Muchas gracias a todos!
 ========================
