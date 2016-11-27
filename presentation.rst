@@ -311,8 +311,6 @@ Convertiremos una app de Django en una AppHook de DjangoCMS, para poder añadirl
 
 Primero veremos cómo es la App original antes de modificarla.
 
-|
-
 .. class:: warning
 
     *Ojo:* Pueden aprovecharse las herramientas de DjangoCMS sin necesidad de que la app sea una AppHook. Esto es sólo para poder añadirlo dinámicamente.
@@ -322,6 +320,7 @@ Primero veremos cómo es la App original antes de modificarla.
 :id: apphook-polls-intro
 
 Nuestra App *polls* tiene:
+==========================
 
 * Un archivo ``models.py`` con el esquema de la base de datos y los métodos .
 * Un archivo ``admin.py`` con  las clases para administrar los modelos.
@@ -340,8 +339,8 @@ Echemos un vistazo...
 
 :id: apphook-polls-urls
 
-Convirtiendo nuestra App en un AppHook
-======================================
+Convirtiendo nuestra App en una AppHook
+=======================================
 
 Primero, comentaremos del archivo ``proyecto/urls.py`` la importación de nuestro urls, porque ya no lo necesitaremos. Ahora lo gestionará DjangoCMS con su AppHook.
 
@@ -384,7 +383,7 @@ En este archivo se definen los AppHooks que se podrán añadir desde la interfaz
 :id: demo-3
 
 Eso es todo
-==========
+===========
 Tras esto nuestra App ya es un Apphook. Sin más cambios necesarios.
 
 Veamos ahora cómo queda...

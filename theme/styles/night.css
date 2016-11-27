@@ -171,6 +171,14 @@ body {
   margin: 0;
   font-family: Yellowtail-Regular; }
 
+.warning {
+  border: 3px solid #f8ca2b;
+  background: #ebed4f;
+  color: black;
+  padding: 5px; }
+  .warning em {
+    color: #c60606; }
+
 /*********************************************
  * NAVIGATION CONTROLS
  *********************************************/

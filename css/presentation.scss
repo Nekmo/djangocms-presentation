@@ -27,15 +27,48 @@
     background: none;
 }
 
-.quote {
-    text-align: center;
-    font-size: 300%;
-    color: gray;
-    font-style: italic;
-}
-
 #cms {
     h1 {
         font-size: 1200%;
+    }
+}
+
+#django-def {
+    h1 {
+        color: #4aed4e;
+    }
+}
+
+#django-features {
+    h1 {
+        text-align: left;
+        font-size: 200%;
+    }
+}
+
+#djangocms-def {
+    h2 {
+        color: #a1d7e1;
+    }
+    h3 {
+        color: #e15e86;
+    }
+}
+
+#apphook-polls-urls {
+    h1 {
+        font-size: 250%;
+    }
+}
+
+#djangocms-ending-1 {
+    h2 {
+        color: #62d942;
+    }
+    h3 {
+        color: #42c9d9;
+    }
+    h4+h4 {
+        color: #d94242;
     }
 }
