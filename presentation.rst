@@ -333,6 +333,12 @@ En este archivo se definen los AppHooks que se podrán añadir desde la interfaz
 
 ----
 
+Eso es todo
+==========
+Tras esto nuestra App ya es un Apphook. Sin más cambios necesarios.
+
+----
+
 DjangoCMS es
 ============
 respetuoso con Django.
@@ -374,3 +380,23 @@ Bloques que se integran en las páginas y pueden reordenarse.
 
 .. note::
     Al igual que en otros CMS, en DjangoCMS hay bloques, a los que se denomina widgets, que se integran en las páginas, pudiéndose añadir, eliminar, modificar o reordenar cuando se desee.
+    
+----
+    
+Referencias
+===========
+
+* **Página oficial**: https://www.django-cms.org/en/
+* **Documentación**: http://docs.django-cms.org/en/latest/
+* **Demo:** https://demo.django-cms.org/
+* **Extras:** https://marketplace.django-cms.org/en/addons/
+
+----
+
+¡Muchas gracias a todos!
+========================
+
+* **Sitio web:** http://nekmo.com
+* **Email:** contacto@nekmo.com
+* **Telegram:** @nekmo
+* **Twitter:** @nekmocom
