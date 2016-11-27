@@ -1,5 +1,11 @@
 // Base theme template for reveal.js
 
+@font-face {
+    font-family: Yellowtail-Regular;
+    src: url(../fonts/Yellowtail-Regular.ttf);
+}
+
+
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
@@ -15,6 +21,8 @@ body {
 	font-weight: normal;
 	letter-spacing: -0.02em;
 	color: $mainColor;
+        
+        text-align: center;
 }
 
 ::selection {
@@ -26,6 +34,22 @@ body {
 /*********************************************
  * HEADERS
  *********************************************/
+
+#impress h1 {
+    font-size: 3.77em;
+}
+
+#impress h2 {
+    font-size: 2.11em;
+}
+
+#impress h3 {
+    font-size: 1.55em;
+}
+
+#impress h4 {
+    font-size: 1em;
+}
 
 #impress h1,
 #impress h2,
@@ -47,6 +71,65 @@ body {
 #impress h1 {
 	text-shadow: $heading1TextShadow;
 }
+
+/*********************************************
+ * DEFAULT ELEMENT STYLES
+ *********************************************/
+/* Ensure certain elements are never larger than the slide itself */
+#impress img,
+#impress video,
+#impress iframe {
+	max-width: 95%;
+	max-height: 95%;
+}
+
+/** Prevents layering issues in certain browser/transition combinations */
+#impress a {
+	position: relative;
+}
+
+#impress strong,
+#impress b {
+	font-weight: bold;
+}
+
+#impress em,
+#impress i {
+	font-style: italic;
+}
+
+#impress ol,
+#impress ul {
+	display: inline-block;
+
+	text-align: left;
+	margin: 0 0 0 1em;
+}
+
+#impress ol {
+	list-style-type: decimal;
+}
+
+#impress ul {
+	list-style-type: disc;
+}
+
+#impress ul ul {
+	list-style-type: square;
+}
+
+#impress ul ul ul {
+	list-style-type: circle;
+}
+
+#impress ul ul,
+#impress ul ol,
+#impress ol ol,
+#impress ol ul {
+	display: block;
+	margin-left: 40px;
+}
+
 
 
 /*********************************************
@@ -101,6 +184,19 @@ body {
 		box-shadow: 0 0 20px rgba(0, 0, 0, 0.55);
 	}
 
+	
+/*********************************************
+ * BLOCKS
+ *********************************************/
+
+.quote {
+  font-size: 200%;
+  color: gray;
+  margin: 0;
+  font-family: Yellowtail-Regular;
+}
+
+	
 
 /*********************************************
  * NAVIGATION CONTROLS

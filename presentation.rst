@@ -56,7 +56,7 @@ Estructura conceptual y tecnológica de soporte definido, normalmente módulos c
 ----
 
 Algunas de las herramientas que ofrece Django...
-------------------------------------------------
+================================================
 
 * Admin
 * CRM (models.py)
