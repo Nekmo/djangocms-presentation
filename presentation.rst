@@ -35,6 +35,8 @@ Adm. de contenidos, para los administradores, editores, participantes y demás u
 ----
 
 :id: django-def
+:data-x: 0
+:data-y: r1600
 
 Django
 ======
@@ -49,6 +51,8 @@ Django
 ----
 
 :id: framework-def
+:data-x: r1600
+:data-y: r0
 
 Framework
 =========
@@ -60,6 +64,8 @@ Estructura conceptual y tecnológica de soporte definido, normalmente módulos c
 ----
 
 :id: django-features
+:data-x: 0
+:data-y: r1600
 
 Algunas de las herramientas que ofrece Django...
 ================================================
@@ -78,6 +84,7 @@ Algunas de las herramientas que ofrece Django...
 ----
 
 :id: djangocms-def
+:data-rotate: 90
 
 DjangoCMS:
 ==========
@@ -111,6 +118,8 @@ Herramientas que ofrece DjangoCMS
 ----
 
 :id: demo-1
+:data-rotate-x: -90
+
 
 Una pequeña demostración...
 ===========================
@@ -121,6 +130,8 @@ Una pequeña demostración...
 ----
 
 :id: cms-howto
+:data-rotate-x: 0
+
 
 Cómo usar DjangoCMS
 ===================
@@ -140,6 +151,10 @@ Más información: http://docs.django-cms.org/en/release-3.4.x/how_to/install.ht
 ----
 
 :id: cms-templates-changes
+:data-z: 2200
+:data-y: r0
+:data-rotate-y: -45
+
 
 Cambios en templates
 ====================
@@ -149,9 +164,15 @@ En el template base, debemos poner las etiquetas:
 * ``placeholder/placeholder_static``
 * ``show_menu``
 
+
 ----
 
 :id: placeholder-def
+:data-x: r1600
+:data-y: r1600
+:data-z: r0
+:data-rotate-x: 0
+:data-rotate-y: 0
 
 Placeholder
 ===========
@@ -182,6 +203,9 @@ El identificador (primer argumento) permite reutilizar secciones entre diferente
 ----
 
 :id: placeholders-types
+:data-x: r1600
+:data-y: r0
+
 
 Placeholder y placeholder_static
 --------------------------------
@@ -194,6 +218,9 @@ Además, podemos diferenciar entre:
 ----
 
 :id: placeholder-static-ex
+:data-x: r0
+:data-y: r0
+:data-rotate-x: 90
 
 Ejemplos de placeholder static
 ==============================
@@ -206,6 +233,7 @@ Ejemplos de placeholder static
 ----
 
 :id: placeholder-ex
+:data-x: r1600
 
 Ejemplos de placeholder
 =======================
@@ -222,6 +250,8 @@ Al editar una página, podremos visualizar los placeholders en los que podremos 
 ----
 
 :id: show-menu-def
+:data-x: r0
+:data-y: r1600
 
 Show_menu
 =========
@@ -237,6 +267,7 @@ Renderiza los menús de DjangoCMS.
 ----
 
 :id: cms-dev
+:data-rotate-x: 0
 
 Desarrollo con DjangoCMS
 ========================
@@ -266,7 +297,13 @@ Apphooks
 
 Similares a las apps de Django, tienen un ``urls.py```, mismos views, mismos templates... pero con la posibilidad de añadirlos de forma dinámica asociados a una url de partida. Por ejemplo, /blog/.
 
+----
+
+:data-x: r-1600
+:data-y: r0
+
 Ejemplos:
+---------
 
 * Una app **blog**. Podremos añadir tantos apps blogs a nuestra web como queramos.
 * Una app **personas**. Pueden añadirse varias apps, cada una filtrando qué tipo de personas se mostrarán  (por ejemplo, app personas "socios", y app personas "junta directiva").
@@ -276,6 +313,7 @@ Ejemplos:
 ----
 
 :id: apphooks-usage
+:data-rotate: r90
 
 Cómo se añaden en la interfaz
 =============================
@@ -289,6 +327,9 @@ Creando una página nueva. Por defecto, DjangoCMS crea páginas de **CONTENIDO**
 ----
 
 :id: apphooks-ex
+:data-x: r0
+:data-y: r-1600
+:data-rotate: r0
 
 Ejemplos:
 ---------
@@ -300,6 +341,9 @@ Ejemplos:
 ----
 
 :id: create-apphook
+:data-x: r1600
+:data-y: r-1600
+
 
 Crear una AppHook
 =================
@@ -318,6 +362,12 @@ Primero veremos cómo es la App original antes de modificarla.
 ----
 
 :id: apphook-polls-intro
+:data-x: r0
+:data-y: r-1600
+:data-z: r0
+:data-rotate: r0
+:data-rotate-x: 0
+:data-rotate-y: 0
 
 Nuestra App *polls* tiene:
 ==========================
