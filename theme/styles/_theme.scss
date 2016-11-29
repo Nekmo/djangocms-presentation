@@ -5,6 +5,11 @@
     src: url(../fonts/Yellowtail-Regular.ttf);
 }
 
+@font-face {
+    font-family: ShareTechMono-Regular;
+    src: url(../fonts/ShareTechMono-Regular.ttf);
+}
+
 
 /*********************************************
  * GLOBAL STYLES
@@ -29,6 +34,15 @@ body {
 	color: $selectionColor;
 	background: $selectionBackgroundColor;
 	text-shadow: none;
+}
+
+#impress tt {
+    font-family: ShareTechMono-Regular;
+    color: #db85ca;
+}
+
+#impress strong {
+    color: #db6666;
 }
 
 /*********************************************

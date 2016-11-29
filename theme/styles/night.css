@@ -8,6 +8,9 @@
 @font-face {
   font-family: Yellowtail-Regular;
   src: url(../fonts/Yellowtail-Regular.ttf); }
+@font-face {
+  font-family: ShareTechMono-Regular;
+  src: url(../fonts/ShareTechMono-Regular.ttf); }
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
@@ -27,6 +30,13 @@ body {
   color: #fff;
   background: #e7ad52;
   text-shadow: none; }
+
+#impress tt {
+  font-family: ShareTechMono-Regular;
+  color: #db85ca; }
+
+#impress strong {
+  color: #db6666; }
 
 /*********************************************
  * HEADERS
