@@ -16,7 +16,8 @@
     "Django" y "CMS"
     
 .. note::
-    *Qué es Django CMS*. Antes, es necesario explicar las 2 palabras que componen su nombre: Django, y CMS.
+    * Estoy aquí para hablaros de DjangoCMS, porque me encanta DjangoCMS. Y me gustaría hoy conseguir que a vosotros también os encantase.
+    * Pero antes de hablar de DjangoCMS debo hablar de las 2 palabras que componen su nobmre: Django, y CMS.
 
 ----
 
@@ -30,7 +31,8 @@ Content Management System
 Adm. de contenidos, para los administradores, editores, participantes y demás usuarios del sitio.
 
 .. note::
-    CMS: permite a los editores añadir, editar y gestionar contenido. Por ejemplo, noticias.
+    * Aunque la mayoría de la gente sepa lo que es, por si acaso lo explico.
+    * CMS: un CMS permite a los editores añadir, editar y gestionar contenido. Por ejemplo, noticias.
 
 ----
 
@@ -46,7 +48,8 @@ Django
     "The web framework for perfectionists with deadlines"
     
 .. note::
-    Es un framework para el desarrollo web en Python.
+    * Y Django, según sus propios creadores, es "The web framework for perfectionists with deadlines"
+    * Lo que vendría a significar, un framework web en Python con gente con un gran ego.
 
 ----
 
@@ -59,7 +62,8 @@ Framework
 Estructura conceptual y tecnológica de soporte definido, normalmente módulos concretos y herramientas para el desarrollo.
     
 .. note::
-    ¿Y qué es un framework? Un método de trabajo establecido haciendo uso de unas herramientas predefinidas.
+    * Vale, ¿pero qué es un framework?
+    * Es un método de trabajo establecido haciendo uso de unas herramientas predefinidas.
     
 ----
 
@@ -71,7 +75,7 @@ Algunas de las herramientas que ofrece Django...
 ================================================
 
 * Admin
-* CRM (models.py)
+* ORM (models.py)
 * Templates
 * Sis. vistas genéricas (views.py)
 * Middleware
@@ -79,7 +83,13 @@ Algunas de las herramientas que ofrece Django...
 * Sistema de usuarios...
 
 .. note::
-    ¿Y qué herramientas son esas? En el caso de Django, algunas de estas son...
+    * Y ahora, perdonad que me centre un poco más en qué herramientas son esas, para entender un poco Django, antes de DjangoCMS...
+    * Admin: gestión de los registros de la base de datos.
+    * ORM. Mapeo de datos de la base de datos a clases.
+    * Templates: tiene su propio sistema de templates.
+    * Vistas: procesan la petición para dar una respuesta.
+    * Middleware: pasos anteriores y posteriores en el procesado de una petición y respuesta.
+    * Urls: Relacionan las urls con las vistas.
 
 ----
 
@@ -96,7 +106,8 @@ Pero con herramientas para CMS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. note::
-    Ahora, perdonad el rodeo. DjangoCMS lo que hace es complementar el framework de Django con herramientas para CMS.
+    * Y ahora sí que sí. Vamos con DjangoCMS.
+    * Si hemos dicho que Django es un framework, DjangoCMS lo que hace es complementar ese framework con herramientas para hacerlo un CMS.
 
 ----
 
@@ -114,6 +125,7 @@ Herramientas que ofrece DjangoCMS
 
 .. note::
     Qué herramientas nos ofrece DjangoCMS:
+    * ...
 
 ----
 
@@ -126,6 +138,8 @@ Una pequeña demostración...
 
 .. note::
     Y ahora una pequeña demostración para que se vea de qué hablamos...
+    * https://demo.django-cms.org
+    * Podéis acceder a esta misma url desde vuestras casas para probar esta misma demo.
 
 ----
 
@@ -148,6 +162,11 @@ Podemos usar DjangoCMS en un proyecto Django ya existente con muy pocos cambios.
 
 Más información: http://docs.django-cms.org/en/release-3.4.x/how_to/install.html
 
+.. note::
+    * Y hasta aquí la demostración. Ahora vamos a lo importante: cómo usarlo.
+    * Puede que alguno de vosotros haya usado Django. O incluso tenga un proyecto. Veremos que añadirle DjangoCMS es fácil.
+    * <listar cosas a hacer>
+
 ----
 
 :id: cms-templates-changes
@@ -163,6 +182,12 @@ En el template base, debemos poner las etiquetas:
 
 * ``placeholder/placeholder_static``
 * ``show_menu``
+* ``render_block`` (Sekizai)
+
+.. note::
+    * Como los otros puntos son algo que podría pedirse con cualquier otro módulo de Django, voy con lo que de verdad supone un cambio, aunque sea pequeño. El template.
+    * <listar cambios a hacer>
+
 
 
 ----
@@ -199,6 +224,9 @@ Permite definir dónde irán los plugins (bloques, widgets).
     {% endblock %}
     
 El identificador (primer argumento) permite reutilizar secciones entre diferentes templates.
+
+.. note::
+    Los placeholder y placeholder_static permiten definir dónde irán los plugins en nuestra página. El argumento entregado define el identificador de placeholder, que permite reutilizarlos entre templates.
     
 ----
 
@@ -212,8 +240,13 @@ Placeholder y placeholder_static
 
 Además, podemos diferenciar entre:
 
-* **Placeholder static:** Va asociado a una página en concreto o contenido. Por ejemplo, un artículo de blog sobre un concierto, puede tener al lado un plugin de botón para reservas.
-* **Placeholder:** Se muestra en todas las páginas que tengan el identificador de placeholder, sin diferenciar contenido. Por ejemplo, un plugin que se mostrará en TODOS los artículos de blog, con publicidad.
+* **Placeholder:** Va asociado a una página en concreto o contenido. Por ejemplo, un artículo de blog sobre un concierto, puede tener al lado un plugin de botón para reservas.
+* **Placeholder static:** Se muestra en todas las páginas que tengan el identificador de placeholder, sin diferenciar contenido. Por ejemplo, un plugin que se mostrará en TODOS los artículos de blog, con publicidad.
+    
+.. note::
+    Existen 2 tipos de placeholder:
+    * placeholder: va asociado a página o instancia del modelo. Los plugins que se pongan sólo aparecerán en dicha página.
+    * placeholder static: permite reutilizar todos los plugins que se pongan en él en todas las páginas y templates que compartan el mismo identificador de placeholder.
     
 ----
 
@@ -229,6 +262,8 @@ Ejemplos de placeholder static
 * Un placeholder **blog_header** que se usa sólo en los templates de una app blog.
 * Un placeholder **blog_article_comments**, que se mostrará sólo en el template de article de blog.
    
+.. note::
+    <leer ejemplos>
 
 ----
 
@@ -241,11 +276,17 @@ Ejemplos de placeholder
 * Un placeholder **content**, que es donde va el contenido de un artículo o noticia.
 * Un placeholder **feature**, que irá al lado del artículo. Por ejemplo, "¡Reserva ya las entradas para este evento!"
    
+.. note::
+    <leer ejemplos>
+   
 ----
 
 Al editar una página, podremos visualizar los placeholders en los que podremos añadir plugins.
 
 .. image:: images/new-placeholder.png
+
+.. note::
+    diferenciar static y normal por la chincheta.
 
 ----
 
@@ -260,9 +301,35 @@ Renderiza los menús de DjangoCMS.
 
 .. code:: htmldjango
 
+    {% load cms_tags %}
+
     <ul class="nav navbar-nav">
         {% show_menu 0 1 100 100 "menu.html" %}
     </ul>
+    
+.. note::
+    No tiene mucho misterio. Renderiza el menú usando el template de menú dado. Puede haber más de un menú, y submenús.
+
+----
+
+Sekizai
+=======
+
+Módulo para Django que permite añadir dinámicamente JS y CSS, evitando duplicados (si no lo estás usando en tu proyecto, ya estás tardando).
+
+.. code:: htmldjango
+
+    {% load sekizai_tags %}
+    ...
+    <head>
+        {% render_block "css" %}
+    </head>
+    <body>
+        {% render_block "css" %}
+    </body>
+    
+.. note::
+    Un complemento imprescindible para Django. ¿No sabes cómo unificar la definición de assets en la página? ¿Se carga varias veces un script en tu página? Sekizai te ayuda con ello, uses DjangoCMS o no. DjangoCMS lo usa para cargar el JS y CSS del modo admin en la página, aunque no es imprescindible.
 
 ----
 
@@ -286,7 +353,8 @@ Además de otras herramientas como:
 - ...
 
 .. note::
-    Y ahora, cómo usar las herramientas de DjangoCMS...
+    Y ahora, cómo podéis crear cosas para DjangoCMS, o cómo contribuir a los addons ya existentes.
+    * Los más importantes que podemos diferenciar son Apphooks y Plugins.
 
 ----
 
@@ -296,6 +364,9 @@ Apphooks
 ========
 
 Similares a las apps de Django, tienen un ``urls.py```, mismos views, mismos templates... pero con la posibilidad de añadirlos de forma dinámica asociados a una url de partida. Por ejemplo, /blog/.
+
+.. note::
+    Son como las Apps de Django, pero reutilizables, configurables, y se añaden de forma dinámica y cuantas veces queramos.
 
 ----
 
@@ -309,6 +380,9 @@ Ejemplos:
 * Una app **personas**. Pueden añadirse varias apps, cada una filtrando qué tipo de personas se mostrarán  (por ejemplo, app personas "socios", y app personas "junta directiva").
 * Una app **encuestas** que permite añadir múltiples encuestas. A su vez habrá plugins que permitirán incluir una encuesta en una página.
 
+
+.. note::
+    Algunos ejemplos... Por ejemplo podemos tener una app blog para añadir... <seguir leyendo>
 
 ----
 
@@ -324,6 +398,12 @@ Creando una página nueva. Por defecto, DjangoCMS crea páginas de **CONTENIDO**
 2. Tras crearse la página, se va a *avanzado* y se elige la app, en este caso la de blog.
 3. Ahora la página es una app, y las urls partirán de la url base de la página.
 
+.. note::
+
+    1. Lo primero, crear una página nueva. Por ejemplo, llamada blog.
+    2. Ir a avanzado y en apps, seleccionar la de Blog.
+    3. Listo.
+
 ----
 
 :id: apphooks-ex
@@ -337,6 +417,9 @@ Ejemplos:
 * **/blog/**: portada del blog.
 * **/blog/c/software-libre**: Categoría software libre.
 * **/blog/ahora-uso-django-cms/**: Entrada en el blog.
+
+.. note::
+    Algunos ejemplos de las urls, si la página la hemos creado como /blog/.
 
 ----
 
