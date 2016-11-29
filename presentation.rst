@@ -126,7 +126,8 @@ Herramientas que ofrece DjangoCMS
 
 .. note::
     Qué herramientas nos ofrece DjangoCMS:
-    * ...
+        
+        * ...
 
 ----
 
@@ -458,7 +459,8 @@ Convertiremos una app de Django en una AppHook de DjangoCMS, para poder añadirl
 
 :id: create-apphook-warning
 :data-x: r0
-:data-y: r-1600
+:data-y: r-800
+:data-z: r2000
 
 .. class:: warning
 
@@ -502,6 +504,7 @@ Echemos un vistazo...
 ----
 
 :id: apphook-polls-urls
+:data-rotate: r45
 
 Convirtiendo nuestra App en una AppHook
 =======================================
@@ -524,6 +527,8 @@ Primero, comentaremos del archivo ``proyecto/urls.py`` la importación de nuestr
 ----
 
 :id: apphook-polls-cms-apps
+:data-rotate: r0
+:data-x: r1600
 
 cms_apps.py
 ===========
@@ -551,6 +556,12 @@ En este archivo se definen los AppHooks que se podrán añadir desde la interfaz
 ----
 
 :id: demo-3
+:data-rotate: 0
+:data-x: r0
+:data-y: r-1000
+:data-z: 0
+:data-rotate-x: 0
+:data-rotate-y: 0
 
 Eso es todo
 ===========
@@ -565,6 +576,12 @@ Veamos ahora cómo queda...
 ----
 
 :id: djangocms-ending-1
+:data-x: r4000
+:data-y: r2300
+:data-z: r0
+:data-rotate: r0
+:data-rotate-x: r0
+:data-rotate-y: r0
 
 DjangoCMS es
 ============
@@ -586,6 +603,9 @@ Lo complementa
 ----
 
 :id: djangocms-ending-2
+:data-x: r0
+:data-y: r600
+:data-z: r1200
 
 DjangoCMS
 =========
@@ -602,6 +622,9 @@ DjangoCMS
 ----
 
 :id: plugins
+:data-x: r1600
+:data-y: r1600
+:data-z: 0
 
 Plugins
 =======
@@ -615,6 +638,9 @@ Bloques que se integran en las páginas y pueden reordenarse.
 ----
 
 :id: create-plugins
+:data-x: r1600
+:data-y: r0
+
 
 Creación de plugins
 ===================
@@ -639,6 +665,8 @@ Modelo para el almacenamiento de la configuración del plugin.
 ----
 
 :id: cms-plugins-1
+:data-x: r0
+:data-y: r1600
 
 cms_plugins.py
 ==============
@@ -673,6 +701,8 @@ cms_plugins.py
 ----
 
 :id: references
+:data-rotate: 360
+:data-z: 800
     
 Referencias
 ===========
@@ -686,6 +716,10 @@ Referencias
     
 ----
 
+:data-z: 0
+:data-scale: 5
+:data-rotate-y: 60
+
 ¿Quieres probar DjangoCMS?
 ==========================
 
@@ -696,6 +730,8 @@ Referencias
     Y ahora, si queréis trabajar con DjangoCMS, podéis hacerlo en la nube, o podéis probarlo antes con la demo.
 
 ----
+
+:data-scale: 1
 
 Sobre esta presentación...
 ==========================
