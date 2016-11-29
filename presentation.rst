@@ -3,6 +3,7 @@
 
 :data-transition-duration: 500
 :css: css/presentation.css
+:css: css/impressConsole.css
 :css: css/monokai.css
 
 ----
@@ -242,11 +243,14 @@ Además, podemos diferenciar entre:
 
 * **Placeholder:** Va asociado a una página en concreto o contenido. Por ejemplo, un artículo de blog sobre un concierto, puede tener al lado un plugin de botón para reservas.
 * **Placeholder static:** Se muestra en todas las páginas que tengan el identificador de placeholder, sin diferenciar contenido. Por ejemplo, un plugin que se mostrará en TODOS los artículos de blog, con publicidad.
+<<<<<<< HEAD
     
 .. note::
     Existen 2 tipos de placeholder:
     * placeholder: va asociado a página o instancia del modelo. Los plugins que se pongan sólo aparecerán en dicha página.
     * placeholder static: permite reutilizar todos los plugins que se pongan en él en todas las páginas y templates que compartan el mismo identificador de placeholder.
+=======
+>>>>>>> 9cd42cd75ebd9034e6b30fe93e11601da6b6791c
     
 ----
 
@@ -437,6 +441,13 @@ Adaptando Django polls, app del tutorial de Django
 Convertiremos una app de Django en una AppHook de DjangoCMS, para poder añadirla dinámicamente con la interfaz web.
 
 Primero veremos cómo es la App original antes de modificarla.
+
+
+----
+
+:id: create-apphook-warning
+:data-x: r0
+:data-y: r-1600
 
 .. class:: warning
 
