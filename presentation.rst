@@ -139,8 +139,9 @@ Una pequeña demostración...
 
 .. note::
     Y ahora una pequeña demostración para que se vea de qué hablamos...
-    * https://demo.django-cms.org
-    * Podéis acceder a esta misma url desde vuestras casas para probar esta misma demo.
+    
+        * https://demo.django-cms.org
+        * Podéis acceder a esta misma url desde vuestras casas para probar esta misma demo.
 
 ----
 
@@ -244,8 +245,10 @@ Además, podemos diferenciar entre:
     
 .. note::
     Existen 2 tipos de placeholder:
+    
     * placeholder: va asociado a página o instancia del modelo. Los plugins que se pongan sólo aparecerán en dicha página.
     * placeholder static: permite reutilizar todos los plugins que se pongan en él en todas las páginas y templates que compartan el mismo identificador de placeholder.    
+    
 ----
 
 :id: placeholder-static-ex
@@ -279,12 +282,14 @@ Ejemplos de placeholder
    
 ----
 
+:id: placeholders-image
+
 Al editar una página, podremos visualizar los placeholders en los que podremos añadir plugins.
 
 .. image:: images/new-placeholder.png
 
 .. note::
-    diferenciar static y normal por la chincheta.
+    Diferenciar static y normal por la chincheta.
 
 ----
 
@@ -310,6 +315,11 @@ Renderiza los menús de DjangoCMS.
 
 ----
 
+:id: sekizai
+:data-x: r3200
+:data-y: r0
+
+
 Sekizai
 =======
 
@@ -333,6 +343,9 @@ Módulo para Django que permite añadir dinámicamente JS y CSS, evitando duplic
 
 :id: cms-dev
 :data-rotate-x: 0
+:data-x: r3200
+:data-y: r3200
+
 
 Desarrollo con DjangoCMS
 ========================
@@ -352,11 +365,14 @@ Además de otras herramientas como:
 
 .. note::
     Y ahora, cómo podéis crear cosas para DjangoCMS, o cómo contribuir a los addons ya existentes.
-    * Los más importantes que podemos diferenciar son Apphooks y Plugins.
+    
+        * Los más importantes que podemos diferenciar son Apphooks y Plugins.
 
 ----
 
 :id: apphooks-def
+:data-x: r0
+:data-y: r1600
 
 Apphooks
 ========
@@ -467,7 +483,7 @@ Nuestra App *polls* tiene:
 * Un archivo ``models.py`` con el esquema de la base de datos y los métodos .
 * Un archivo ``admin.py`` con  las clases para administrar los modelos.
 * Un archivo ``views.py`` con las funciones y clases que procesan las peticiones web, para devolver unas respuestas.
-* Un archivo ``urls.py`` que relaciona las urls con las vistas que ejecutarán.
+* Un archivo ``urls.py`` que relaciona los patrones de urls con las vistas que ejecutarán.
 * Un directorio ``templates/`` con los archivos html para visualizar el resultado de las vistas.
 
 .. note::
@@ -530,7 +546,7 @@ En este archivo se definen los AppHooks que se podrán añadir desde la interfaz
     apphook_pool.register(PollsApphook)
 
 .. note::
-    Y esta es la parte importante del cambio: hemos añadido un archivo nuevo a la app llamada cms_apps.py, con la definición de la app. Véase el urls que hemos comentado antes.
+    Y esta es la parte importante del cambio: hemos añadido un archivo nuevo a la app llamado cms_apps.py, con la definición de la app. Véase el urls que hemos comentado antes.
     
 ----
 
@@ -594,7 +610,65 @@ Son el equivalente a los widgets de otros CMS.
 Bloques que se integran en las páginas y pueden reordenarse.
 
 .. note::
-    Al igual que en otros CMS, en DjangoCMS hay bloques, a los que se denomina widgets, que se integran en las páginas, pudiéndose añadir, eliminar, modificar o reordenar cuando se desee.
+   Al igual que en otros CMS, en DjangoCMS hay bloques, a los que se denomina widgets, que se integran en las páginas, pudiéndose añadir, eliminar, modificar o reordenar cuando se desee.
+    
+----
+
+:id: create-plugins
+
+Creación de plugins
+===================
+
+models.py
+---------
+Modelo para el almacenamiento de la configuración del plugin.
+
+.. code:: python
+
+    class PollPluginModel(CMSPlugin): # <<- Hereda de Model
+        poll = models.ForeignKey(Poll)
+        # Más campos de configuración...
+
+        def __unicode__(self):
+            return self.poll.question
+
+.. note::
+
+    No me voy a entretener demasiado en esto por falta de tiempo. Sólo repasaré por encima lo necesario. Lo primero, un modelo con la configuración del plugin.
+    
+----
+
+:id: cms-plugins-1
+
+cms_plugins.py
+==============
+
+.. code:: python
+
+    class PollPluginPublisher(CMSPluginBase):
+        model = PollPluginModel  # El modelo de antes con la config.
+        module = _("Polls")
+        name = _("Poll Plugin")  # Nombre en el listado de la interfaz
+        # El template con el que se renderizará el template
+        render_template = "polls_cms_integration/poll_plugin.html"
+
+        def render(self, context, instance, placeholder):
+            context.update({'instance': instance})
+            return context
+
+    plugin_pool.register_plugin(PollPluginPublisher)  # registro del plugin
+    
+.. note::
+    Y creamos un nuevo archivo, cms_plugins, con la declaración del plugin. Éste se encarga tanto de la declaración como el renderizado.
+
+----
+
+:id: cms-plugins-2
+
+.. image:: images/poll-plugin-in-menu.png
+
+.. note::
+    Y tras crearlo, podremos añadirlo como un plugin más. Cuando se crea, se nos pedirá configurarlo rellenando los campos del modelo de configuración.
     
 ----
 
@@ -632,7 +706,8 @@ Sobre esta presentación...
 .. note::
     si te ha gustado la presentación, puedes verla en mi Github, y no olvidéis darle a like :)
 
-
+----
+    
 :id: end
 
 ¡Muchas gracias a todos!
