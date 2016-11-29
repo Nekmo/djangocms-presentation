@@ -189,8 +189,6 @@ En el template base, debemos poner las etiquetas:
     * Como los otros puntos son algo que podría pedirse con cualquier otro módulo de Django, voy con lo que de verdad supone un cambio, aunque sea pequeño. El template.
     * <listar cambios a hacer>
 
-
-
 ----
 
 :id: placeholder-def
@@ -243,15 +241,11 @@ Además, podemos diferenciar entre:
 
 * **Placeholder:** Va asociado a una página en concreto o contenido. Por ejemplo, un artículo de blog sobre un concierto, puede tener al lado un plugin de botón para reservas.
 * **Placeholder static:** Se muestra en todas las páginas que tengan el identificador de placeholder, sin diferenciar contenido. Por ejemplo, un plugin que se mostrará en TODOS los artículos de blog, con publicidad.
-<<<<<<< HEAD
     
 .. note::
     Existen 2 tipos de placeholder:
     * placeholder: va asociado a página o instancia del modelo. Los plugins que se pongan sólo aparecerán en dicha página.
-    * placeholder static: permite reutilizar todos los plugins que se pongan en él en todas las páginas y templates que compartan el mismo identificador de placeholder.
-=======
->>>>>>> 9cd42cd75ebd9034e6b30fe93e11601da6b6791c
-    
+    * placeholder static: permite reutilizar todos los plugins que se pongan en él en todas las páginas y templates que compartan el mismo identificador de placeholder.    
 ----
 
 :id: placeholder-static-ex
@@ -440,8 +434,9 @@ Adaptando Django polls, app del tutorial de Django
 
 Convertiremos una app de Django en una AppHook de DjangoCMS, para poder añadirla dinámicamente con la interfaz web.
 
-Primero veremos cómo es la App original antes de modificarla.
 
+.. note::
+    Seguramente a quienes hayan seguido el tutorial de Django, les suene la App Polls. Vamos a modificarla para integrarla en DjangoCMS.
 
 ----
 
@@ -453,6 +448,9 @@ Primero veremos cómo es la App original antes de modificarla.
 
     *Ojo:* Pueden aprovecharse las herramientas de DjangoCMS sin necesidad de que la app sea una AppHook. Esto es sólo para poder añadirlo dinámicamente.
 
+.. note::
+   Aclarar que no es necesario convertirla en un Apphook para poder usarla junto con DjangoCMS. Esto es sólo para poder añadirla dinámicamente.
+    
 ----
 
 :id: apphook-polls-intro
@@ -472,12 +470,18 @@ Nuestra App *polls* tiene:
 * Un archivo ``urls.py`` que relaciona las urls con las vistas que ejecutarán.
 * Un directorio ``templates/`` con los archivos html para visualizar el resultado de las vistas.
 
+.. note::
+    En nuestra app de polls tenemos lo siguiente... <leer>
+
 ----
 
 :id: demo-2
 
 Echemos un vistazo...
 =====================
+
+.. note::
+    Ahora, vamos a ver cómo es antes de modificarla...
 
 ----
 
@@ -498,6 +502,9 @@ Primero, comentaremos del archivo ``proyecto/urls.py`` la importación de nuestr
         url(r'^polls/', include('polls.urls')),  # <-- la comentamos
     ]
 
+.. note::
+    En nuestro proyecto original, para poder usar la App, hemos tenido que añadir su urls al urls del proyecto. Ya no necesitaremos esto, porque ahora se encargará DjangoCMS.
+    
 ----
 
 :id: apphook-polls-cms-apps
@@ -522,6 +529,9 @@ En este archivo se definen los AppHooks que se podrán añadir desde la interfaz
 
     apphook_pool.register(PollsApphook)
 
+.. note::
+    Y esta es la parte importante del cambio: hemos añadido un archivo nuevo a la app llamada cms_apps.py, con la definición de la app. Véase el urls que hemos comentado antes.
+    
 ----
 
 :id: demo-3
@@ -531,6 +541,10 @@ Eso es todo
 Tras esto nuestra App ya es un Apphook. Sin más cambios necesarios.
 
 Veamos ahora cómo queda...
+--------------------------
+
+.. note::
+    Y esto es todo lo realmente necesario. No hemos tocado ni los modelos, ni el admin, ni los views, ni el urls ni el templates. Sólo hemos añadido un archivo. Ahora veamos el resultado.
 
 ----
 
@@ -551,7 +565,7 @@ Lo complementa
 """"""""""""""
 
 .. note::
-    DjangoCMS a diferencia de otros sistema de CMS para Django, lo complementa sin llegar a modificarlo.
+   Así pues, DjangoCMS a diferencia de otros sistema de CMS para Django, lo complementa sin llegar a modificarlo. Es respetuoso con el propio Django.
 
 ----
 
@@ -567,7 +581,7 @@ DjangoCMS
 * Mismos templates.
 
 .. note::
-    Y como hemos visto, DjangoCMS reutiliza los elementos ya existentes de Django.
+    Y tal y como hemos visto, DjangoCMS reutiliza los elementos ya existentes de Django. Véase... <leer>
 
 ----
 
@@ -591,10 +605,33 @@ Referencias
 
 * **Página oficial**: https://www.django-cms.org/en/
 * **Documentación**: http://docs.django-cms.org/en/latest/
-* **Demo:** https://demo.django-cms.org/
 * **Extras:** https://marketplace.django-cms.org/en/addons/
 
+.. note::
+    Algunas referencias por si queréis empezar con DjangoCMS.
+    
 ----
+
+¿Quieres probar DjangoCMS?
+==========================
+
+* **Tu proyecto en la nube:** https://www.divio.com/en/
+* **Usa su demo:** https://demo.django-cms.org
+
+.. note::
+    Y ahora, si queréis trabajar con DjangoCMS, podéis hacerlo en la nube, o podéis probarlo antes con la demo.
+
+----
+
+Sobre esta presentación...
+==========================
+
+* **Código fuente presentación:** https://github.com/Nekmo/djangocms-presentation
+* **Código fuente app polls modificada:**: https://github.com/Nekmo/djangocms-ejemplo
+    
+.. note::
+    si te ha gustado la presentación, puedes verla en mi Github, y no olvidéis darle a like :)
+
 
 :id: end
 
@@ -605,3 +642,6 @@ Referencias
 * **Email:** contacto@nekmo.com
 * **Telegram:** @nekmo
 * **Twitter:** @nekmocom
+
+.. note::
+    Muchas gracias. Por si queréis hablar conmigo, podéis hacerlo por estos medios, o luego al final.
