@@ -38,6 +38,9 @@ body {
 #impress strong {
   color: #db6666; }
 
+#impress em {
+  color: #ece35a; }
+
 /*********************************************
  * HEADERS
  *********************************************/
@@ -187,7 +190,7 @@ body {
   color: black;
   padding: 5px; }
   .warning em {
-    color: #c60606; }
+    color: #c60606 !important; }
 
 /*********************************************
  * NAVIGATION CONTROLS

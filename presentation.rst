@@ -29,7 +29,7 @@ CMS
 
 Content Management System
 -------------------------
-Adm. de contenidos, para los administradores, editores, participantes y demás usuarios del sitio.
+Adm. de contenidos, para los *administradores*, *editores*, *participantes* y demás usuarios del sitio.
 
 .. note::
     * Aunque la mayoría de la gente sepa lo que es, por si acaso lo explico.
@@ -60,7 +60,7 @@ Django
 
 Framework
 =========
-Estructura conceptual y tecnológica de soporte definido, normalmente módulos concretos y herramientas para el desarrollo.
+*Estructura conceptual* y tecnológica de soporte definido, normalmente módulos concretos y *herramientas para el desarrollo*.
     
 .. note::
     * Vale, ¿pero qué es un framework?
@@ -75,13 +75,13 @@ Estructura conceptual y tecnológica de soporte definido, normalmente módulos c
 Algunas de las herramientas que ofrece Django...
 ================================================
 
-* Admin
-* ORM (models.py)
-* Templates
-* Sis. vistas genéricas (views.py)
-* Middleware
-* Sis. de urls (urls.py)
-* Sistema de usuarios...
+* **Admin**
+* **ORM** (``models.py``)
+* **Templates**
+* Sis. **vistas** genéricas (``views.py``)
+* **Middleware**
+* Sis. de **urls** (``urls.py``)
+* Sistema de **usuarios**...
 
 .. note::
     * Y ahora, perdonad que me centre un poco más en qué herramientas son esas, para entender un poco Django, antes de DjangoCMS...
@@ -117,12 +117,12 @@ Pero con herramientas para CMS
 Herramientas que ofrece DjangoCMS
 =================================
 
-* Sistema de menús jerárquico y multiidioma.
-* Gestión y creación de páginas.
-* Borradores y publicación de contenido.
-* Sistema de versiones.
-* Contenido multiidioma y condicionado por el mismo.
-* Gestión de los Apphooks y los plugins (que hablaremos más adelante).
+* Sistema de *menús jerárquico* y *multiidioma*.
+* Gestión y creación de *páginas*.
+* *Borradores y publicación* de contenido.
+* Sistema de *versiones*.
+* *Contenido multiidioma* y condicionado por el mismo.
+* Gestión de los *Apphooks* y los *plugins* (que hablaremos más adelante).
 
 .. note::
     Qué herramientas nos ofrece DjangoCMS:
@@ -156,9 +156,9 @@ Cómo usar DjangoCMS
 Podemos usar DjangoCMS en un proyecto Django ya existente con muy pocos cambios.
 
 * Añadir los componentes al :code:`INSTALLED_APPS`.
-* Añadir los middleware y context processor.
+* Añadir los **middleware** y **context processor**.
 * Añadir al :code:`urls.py`.
-* Etiquetas DjangoCMS en template base.
+* Etiquetas DjangoCMS en **template** base.
 * Definir templates.
 
 |
@@ -202,7 +202,7 @@ En el template base, debemos poner las etiquetas:
 
 Placeholder
 ===========
-Permite definir dónde irán los plugins (bloques, widgets).
+Permite definir dónde irán los plugins *(bloques, widgets)*.
 
 .. code:: htmldjango
 
@@ -224,7 +224,7 @@ Permite definir dónde irán los plugins (bloques, widgets).
     </div>
     {% endblock %}
     
-El identificador (primer argumento) permite reutilizar secciones entre diferentes templates.
+El **identificador** (primer argumento) permite *reutilizar secciones* entre diferentes templates.
 
 .. note::
     Los placeholder y placeholder_static permiten definir dónde irán los plugins en nuestra página. El argumento entregado define el identificador de placeholder, que permite reutilizarlos entre templates.
@@ -241,8 +241,8 @@ Placeholder y placeholder_static
 
 Además, podemos diferenciar entre:
 
-* **Placeholder:** Va asociado a una página en concreto o contenido. Por ejemplo, un artículo de blog sobre un concierto, puede tener al lado un plugin de botón para reservas.
-* **Placeholder static:** Se muestra en todas las páginas que tengan el identificador de placeholder, sin diferenciar contenido. Por ejemplo, un plugin que se mostrará en TODOS los artículos de blog, con publicidad.
+* **Placeholder:** Va *asociado a una página* en concreto o contenido. Por ejemplo, un artículo de blog sobre un concierto, puede tener al lado un plugin de botón para reservas.
+* **Placeholder static:** Se muestra en *todas las páginas* que tengan el identificador de placeholder, sin diferenciar contenido. Por ejemplo, un plugin que se mostrará en TODOS los artículos de blog, con publicidad.
     
 .. note::
     Existen 2 tipos de placeholder:
@@ -276,7 +276,7 @@ Ejemplos de placeholder
 =======================
 
 * Un placeholder **content**, que es donde va el contenido de un artículo o noticia.
-* Un placeholder **feature**, que irá al lado del artículo. Por ejemplo, "¡Reserva ya las entradas para este evento!"
+* Un placeholder **feature**, que irá al lado del artículo. Por ejemplo, *"¡Reserva ya las entradas para este evento!"*
    
 .. note::
     <leer ejemplos>
@@ -324,7 +324,7 @@ Renderiza los menús de DjangoCMS.
 Sekizai
 =======
 
-Módulo para Django que permite añadir dinámicamente JS y CSS, evitando duplicados (si no lo estás usando en tu proyecto, ya estás tardando).
+Módulo para Django que permite **añadir dinámicamente JS y CSS**, evitando duplicados (si no lo estás usando en tu proyecto, ya estás tardando).
 
 .. code:: htmldjango
 
@@ -353,8 +353,8 @@ Desarrollo con DjangoCMS
 
 Tenemos principalmente:
 
-- Apphooks
-- Plugins
+- **Apphooks**
+- **Plugins**
 
 |
 
@@ -378,7 +378,7 @@ Además de otras herramientas como:
 Apphooks
 ========
 
-Similares a las apps de Django, tienen un ``urls.py```, mismos views, mismos templates... pero con la posibilidad de añadirlos de forma dinámica asociados a una url de partida. Por ejemplo, /blog/.
+Similares a las apps de Django, tienen un ``urls.py``, *mismos views, mismos templates...* pero con la posibilidad de **añadirlos de forma dinámica** asociados a una url de partida. Por ejemplo, ``/blog/``.
 
 .. note::
     Son como las Apps de Django, pero reutilizables, configurables, y se añaden de forma dinámica y cuantas veces queramos.
@@ -391,8 +391,8 @@ Similares a las apps de Django, tienen un ``urls.py```, mismos views, mismos tem
 Ejemplos:
 ---------
 
-* Una app **blog**. Podremos añadir tantos apps blogs a nuestra web como queramos.
-* Una app **personas**. Pueden añadirse varias apps, cada una filtrando qué tipo de personas se mostrarán  (por ejemplo, app personas "socios", y app personas "junta directiva").
+* Una app **blog**. Podremos añadir tantas apps blogs a nuestra web como queramos.
+* Una app **personas**. Pueden añadirse varias apps, cada una filtrando qué tipo de personas se mostrarán  (por ejemplo, app personas *"socios"*, y app personas *"junta directiva"*).
 * Una app **encuestas** que permite añadir múltiples encuestas. A su vez habrá plugins que permitirán incluir una encuesta en una página.
 
 
@@ -409,8 +409,8 @@ Cómo se añaden en la interfaz
 
 Creando una página nueva. Por defecto, DjangoCMS crea páginas de **CONTENIDO**, pero es posible cambiarlo para que sea una app.
 
-1. Se crea una página **blog**, con url ``/blog/``.
-2. Tras crearse la página, se va a *avanzado* y se elige la app, en este caso la de blog.
+1. Se **crea una página** *blog*, con url ``/blog/``.
+2. Tras crearse la página, se va a **avanzado** y se **elige la app**, en este caso la de *blog*.
 3. Ahora la página es una app, y las urls partirán de la url base de la página.
 
 .. note::
@@ -429,9 +429,9 @@ Creando una página nueva. Por defecto, DjangoCMS crea páginas de **CONTENIDO**
 Ejemplos:
 ---------
 
-* **/blog/**: portada del blog.
-* **/blog/c/software-libre**: Categoría software libre.
-* **/blog/ahora-uso-django-cms/**: Entrada en el blog.
+* ``/blog/``: portada del blog.
+* ``/blog/c/software-libre``: Categoría software libre.
+* ``/blog/ahora-uso-django-cms/``: Entrada en el blog.
 
 .. note::
     Algunos ejemplos de las urls, si la página la hemos creado como /blog/.
@@ -449,7 +449,7 @@ Crear una AppHook
 Adaptando Django polls, app del tutorial de Django
 --------------------------------------------------
 
-Convertiremos una app de Django en una AppHook de DjangoCMS, para poder añadirla dinámicamente con la interfaz web.
+Convertiremos una app de Django en una AppHook de DjangoCMS, para poder **añadirla dinámicamente** con la interfaz web.
 
 
 .. note::
@@ -482,11 +482,11 @@ Convertiremos una app de Django en una AppHook de DjangoCMS, para poder añadirl
 Nuestra App *polls* tiene:
 ==========================
 
-* Un archivo ``models.py`` con el esquema de la base de datos y los métodos .
-* Un archivo ``admin.py`` con  las clases para administrar los modelos.
-* Un archivo ``views.py`` con las funciones y clases que procesan las peticiones web, para devolver unas respuestas.
-* Un archivo ``urls.py`` que relaciona los patrones de urls con las vistas que ejecutarán.
-* Un directorio ``templates/`` con los archivos html para visualizar el resultado de las vistas.
+* Un archivo ``models.py`` con el esquema de la **base de datos** y los métodos .
+* Un archivo ``admin.py`` con  las clases para **administrar** los modelos.
+* Un archivo ``views.py`` con las funciones y clases que **procesan** las peticiones web, para devolver unas respuestas.
+* Un archivo ``urls.py`` que relaciona los **patrones de urls** con las vistas que ejecutarán.
+* Un directorio ``templates/`` con los **archivos html** para visualizar el resultado de las vistas.
 
 .. note::
     En nuestra app de polls tenemos lo siguiente... <leer>
@@ -565,7 +565,7 @@ En este archivo se definen los AppHooks que se podrán añadir desde la interfaz
 
 Eso es todo
 ===========
-Tras esto nuestra App ya es un Apphook. Sin más cambios necesarios.
+Tras esto nuestra App ya es un Apphook. **Sin más cambios necesarios**.
 
 Veamos ahora cómo queda...
 --------------------------
@@ -610,11 +610,11 @@ Lo complementa
 DjangoCMS
 =========
 
-* Usa el admin de Django.
-* Mismo sistema de modelos.
-* Mismo sistema de urls.
-* Mismos views.
-* Mismos templates.
+* Usa el **admin** de Django.
+* Mismo sistema de **modelos**.
+* Mismo sistema de **urls**.
+* Mismos **views**.
+* Mismos **templates**.
 
 .. note::
     Y tal y como hemos visto, DjangoCMS reutiliza los elementos ya existentes de Django. Véase... <leer>
@@ -628,9 +628,9 @@ DjangoCMS
 
 Plugins
 =======
-Son el equivalente a los widgets de otros CMS.
+Son el equivalente a los **widgets** de otros CMS.
 
-Bloques que se integran en las páginas y pueden reordenarse.
+**Bloques** que se integran en las páginas y *pueden reordenarse*.
 
 .. note::
    Al igual que en otros CMS, en DjangoCMS hay bloques, a los que se denomina widgets, que se integran en las páginas, pudiéndose añadir, eliminar, modificar o reordenar cuando se desee.
@@ -647,7 +647,7 @@ Creación de plugins
 
 models.py
 ---------
-Modelo para el almacenamiento de la configuración del plugin.
+Modelo para el almacenamiento de la **configuración del plugin**.
 
 .. code:: python
 
@@ -670,6 +670,7 @@ Modelo para el almacenamiento de la configuración del plugin.
 
 cms_plugins.py
 ==============
+**Definición** del plugin para su uso. Incluye **renderizado** y todo lo necesario.
 
 .. code:: python
 
